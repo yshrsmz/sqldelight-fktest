@@ -1,0 +1,2 @@
+foreignKeysOn:
+PRAGMA foreign_keys = 1;

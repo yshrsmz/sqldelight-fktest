@@ -1,0 +1,18 @@
+CREATE TABLE book (
+    id INTEGER NOT NULL PRIMARY KEY,
+    name TEXT NOT NULL,
+    author_id INTEGER NOT NULL,
+    FOREIGN KEY (author_id) REFERENCES author(id) ON DELETE CASCADE
+);
+
+insert:
+INSERT OR REPLACE INTO book (id, name, author_id) VALUES (?, ?, ?);
+
+deleteAll:
+DELETE FROM book;
+
+selectAll:
+SELECT * FROM book;
+
+count:
+SELECT COUNT(*) FROM book;
