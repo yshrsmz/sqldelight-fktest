@@ -82,17 +82,20 @@ class FkTest {
         assertEquals(0, authors)
 
         var failed = false
-        database.transaction {
-            try {
+
+        try {
+            database.transaction {
                 database.bookQueries.insert(id = book3.id, name = book3.name, author_id = book3.author_id)
-            } catch (e: Throwable) {
-                println(e)
-                failed = true
             }
+        } catch (e: Throwable) {
+            println(e)
+            failed = true
         }
+
 
         val books2 = database.bookQueries.count().executeAsOne()
         println("books count after insertion attempt: $books2")
+
         if (!failed) {
             fail("should throw exception")
         }
