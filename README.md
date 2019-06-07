@@ -1,7 +1,9 @@
 sqldelight Foreign Keys test
 ===
 
-foreign_keys seems to be not working if statement is wrapped with transaction.
+https://github.com/square/sqldelight/issues/1356
+
+On iOS foreign_keys seems to be not working if statement is wrapped with transaction.
 
 ### Run Test
 
